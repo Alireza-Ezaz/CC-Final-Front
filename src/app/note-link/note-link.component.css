@@ -22,7 +22,7 @@
 
 .comment-container {
   min-height: 50px;
-  min-width: 250px;
+  width: 70%;
   border-radius: 15px;
   border: 1px solid black;
   display: flex;
@@ -32,7 +32,8 @@
   background-color: #FFFF88;
   padding: 15px;
   overflow-x: auto;
-  font-size: 26px;
+  font-size: 22px;
+  overflow: auto;
 }
 
 .button {
