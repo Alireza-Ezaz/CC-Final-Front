@@ -11,6 +11,7 @@ import { RequestReadComponent } from './request-read/request-read.component';
 import {FormsModule} from '@angular/forms';
 import { NoteLinkComponent } from './note-link/note-link.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { NoteLinkComponent } from './note-link/note-link.component';
       [
         {path: 'create', component: CreateNoteComponent, pathMatch: 'full'},
         {path: 'read', component: ReadNoteComponent, pathMatch: 'full'},
-        {path: 'requestRead', component: RequestReadComponent, pathMatch: 'full'},
+        {path: 'requestRead', component: RequestReadComponent, children: [{path: '**', component: RequestReadComponent}]},
         {path: 'noteLink', component: NoteLinkComponent, pathMatch: 'full'},
         {path: '**', redirectTo: '/create', pathMatch: 'full'},
       ],
