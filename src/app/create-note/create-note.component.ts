@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RequestService} from '../services/request.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-note',
@@ -10,7 +11,8 @@ export class CreateNoteComponent implements OnInit {
 
   note;
 
-  constructor(private requestService: RequestService) {
+  constructor(private requestService: RequestService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,6 +21,7 @@ export class CreateNoteComponent implements OnInit {
   createNote() {
     this.requestService.create(this.note).subscribe(res => {
       this.note = '';
+      this.router.navigate(['noteLink']);
     });
   }
 
