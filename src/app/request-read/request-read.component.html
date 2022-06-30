@@ -1,1 +1,27 @@
-<p>request-read works!</p>
+<div class="main-container" *ngIf="!loading">
+
+  <div *ngIf="status === 0">
+    <div class="title-container">Bad request.</div>
+  </div>
+  <div *ngIf="status == 1">
+    <div class="title-container">Note is destroyed.</div>
+  </div>
+
+  <div *ngIf="status == 2">
+    <div class="title-container">Note is available. ID={{linkId}}</div>
+    <div>
+      <button (click)="goToReadPage()" class="button">
+        Read & Destroy
+      </button>
+
+      <button (click)="backHome()" class="button">
+        Do nothing/Back Home
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<div class="main-container" class="title-container" *ngIf="loading">
+  LOADING...
+</div>

@@ -1,1 +1,26 @@
-<p>read-note works!</p>
+<div class="main-container" *ngIf="!loading">
+  <div *ngIf="status == 2">
+
+    <div class="title-container" *ngIf="status == 1">
+      Note is destroyed.
+    </div>
+
+    <div style=" display: flex; justify-content: center; align-items: center; flex-direction: column" *ngIf="status == 2">
+      <div class="title-container">
+        Your private note is here...
+      </div>
+      <div class="comment-container">
+        {{body}}
+      </div>
+      <div class="title-container" style="font-size: 18px !important; color: red !important;">
+        Note is deleted now...
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="main-container" *ngIf="!loading">
+  LOADING...
+</div>
