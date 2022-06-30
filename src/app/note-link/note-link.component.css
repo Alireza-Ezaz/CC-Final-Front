@@ -21,8 +21,8 @@
 }
 
 .comment-container {
-  height: 40%;
-  width: 70%;
+  min-height: 50px;
+  min-width: 250px;
   border-radius: 15px;
   border: 1px solid black;
   display: flex;
@@ -30,7 +30,7 @@
   align-items: center;
   justify-content: center;
   background-color: #FFFF88;
-  padding: 10px;
+  padding: 15px;
   overflow-x: auto;
   font-size: 26px;
 }
