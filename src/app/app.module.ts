@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {PNInterceptor} from './utilities/PNInterceptor';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { ReadNoteComponent } from './read-note/read-note.component';
 import { RequestReadComponent } from './request-read/request-read.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(
       [
         {path: 'create', component: CreateNoteComponent, pathMatch: 'full'},
